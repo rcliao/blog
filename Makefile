@@ -4,5 +4,8 @@ start:
 new:
 	hugo new
 
+build:
+	hugo
+
 deploy:
 	./script/deploy.sh
