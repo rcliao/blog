@@ -1,4 +1,4 @@
-name: CI
+name: publish github pages
 
 on: [push]
 
@@ -13,5 +13,6 @@ jobs:
       run: mkdir -p ~/.ssh && echo $DEPLOY_KEY >> ~/.ssh/id_rsa
       env:
         DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+        GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no"
     - name: Publish changes to github pages
       run: ./script/deploy.sh
