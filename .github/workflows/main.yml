@@ -9,5 +9,7 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
+    - name: debug deploy key
+      run: echo $DEPLOY_KEY
     - name: publish changes to github pages
       run: ./script/deploy.sh
