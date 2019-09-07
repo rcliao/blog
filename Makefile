@@ -4,9 +4,5 @@ start:
 new:
 	hugo
 
-build:
-	hugo && \
-	cd public && git add --all && git commit -m "Publishing to gh-pages" && cd ..
-
-publish:
-	cd public && git push origin gh-pages && cd ..
+deploy:
+	./script/deploy.sh
