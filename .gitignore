@@ -1,7 +1,3 @@
 # vim ignore files
 *.swp
 *.swo
-
-# hugo generated content
-public/
-resources/
