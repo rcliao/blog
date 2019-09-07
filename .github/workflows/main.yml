@@ -9,10 +9,11 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
-    - name: Setting up deploy key
-      run: mkdir -p ~/.ssh && echo $DEPLOY_KEY >> ~/.ssh/id_rsa
+    - name: Publish changes to github pages
       env:
         DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
         GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no"
-    - name: Publish changes to github pages
-      run: ./script/deploy.sh
+      run: |
+        eval "$(ssh-agent -s)"
+        ssh-add - <<< "${DEPLOY_KEY}"./script/deploy.sh
+        ./script/deploy.sh
