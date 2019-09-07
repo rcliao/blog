@@ -10,7 +10,7 @@ git submodule add -f -b master git@github.com:rcliao/rcliao.github.io.git public
 printf "\033[0;32mDeploying updates to GitHub...\033[0m\n"
 
 # Build the project.
-./bin/hugo  # if using a theme, replace with `hugo -t <YOURTHEME>`
+./bin/hugo -t hello-friend-ng  # if using a theme, replace with `hugo -t <YOURTHEME>`
 
 # Go To Public folder
 cd public
