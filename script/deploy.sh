@@ -19,7 +19,7 @@ msg="rebuilding site $(date)"
 if [ -n "$*" ]; then
 	msg="$*"
 fi
-git commit -m "$msg" --author "Eric Liao <rcliao01@gmail.com>"
+git -c user.name='Eric Liao' -c user.email='rcliao01@gmail.com' commit -m "$msg"
 
 # Push source and build repos.
 git push origin master
