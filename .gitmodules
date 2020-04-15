@@ -2,3 +2,6 @@
 	path = public
 	url = git@github.com:rcliao/rcliao.github.io.git
 	branch = master
+[submodule "themes/pickles"]
+	path = themes/pickles
+	url = git@github.com:mismith0227/hugo_theme_pickles.git

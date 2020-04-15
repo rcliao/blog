@@ -1,57 +1,54 @@
 baseurl = "/"
 languageCode = "en-us"
-theme = "hello-friend-ng"
+Title = "Non Play Blog"
+theme = "pickles"
+# Copyright notice. This is displayer in the footer.
+copyright = "&copy; 2020 Eric Liao"
+
+# Google Analytics API key.
+googleAnalytics = "Your Google Analytics tracking id"
 
 [params]
-  dateform        = "Jan 2, 2006"
-  dateformShort   = "Jan 2"
-  dateformNum     = "2006-01-02"
-  dateformNumTime = "2006-01-02 15:04 -0700"
+  paginate = 10
+  # Social accounts. Link to these accounts are displayed in the header and
+  # footer
+  twitter = "rcliaodev"
+  github = "rcliao"
+  linkedin = "rcliao"
+  # Short subtitle/tagline. This is displayed in the header.
+  subtitle = "Software development blog"
 
-  # Metadata mostly used in document's head
-  description = "Eric Liao's personal blog about software development"
-  keywords = "Eric Liao, homepage, blog, science, informatics, development, programming"
-  images = [""]
+[[menu.main]]
+    name = "Blog"
+    url = "/"
+    weight = 1
 
-  # Directory name of your blog content (default is `content/posts`)
-  contentTypeName = "posts"
-  # Default theme "light" or "dark"
-  defaultTheme = "dark"
+[[menu.main]]
+    name = "Tags"
+    url = "/tags"
+    weight = 4
 
-[languages]
-  [languages.en]
-    title = "Non Player Blog"
-    subtitle = "Just like Non-Player-Character except for blog by Eric"
-    keywords = "software development"
-    copyright = "Eric Liao"
-    readOtherPosts = "Read other posts"
+[related]
+  # Only include matches with rank >= threshold. This is a normalized rank between 0 and 100.
+  threshold = 80
 
-    [languages.en.params.logo]
-      logoText = "Non Player Blog"
-      logoHomeLink = "/"
+  # To get stable "See also" sections we, by default, exclude newer related pages.
+  includeNewer = false
 
-	# You can create a language based menu
-    [languages.en.menu]
-      [[languages.en.menu.main]]
-        identifier = "about"
-        name = "About"
-        url = "/about"
-      [[languages.en.menu.main]]
-        identifier = "showcase"
-        name = "Showcase"
-        url = "/showcase"
-      [[languages.en.menu.main]]
-        identifier = "posts"
-        name = "Posts"
-        url = "/posts"
+  # Will lower case keywords in both queries and in the indexes.
+  toLower = false
 
-# And you can even create generic menu
-[menu]
-  [[menu.main]]
-    identifier = "about"
-    name       = "About"
-    url        = "/about"
-  [[menu.main]]
-    identifier = "blog"
-    name       = "Blog"
-    url        = "/posts"
+  [[related.indices]]
+  name = "keywords"
+  weight = 150
+  [[related.indices]]
+  name  = "author"
+  toLower = true
+  weight = 30
+  [[related.indices]]
+  name  = "tags"
+  weight = 100
+  [[related.indices]]
+  name  = "date"
+  weight = 10
+  pattern = "2017"
