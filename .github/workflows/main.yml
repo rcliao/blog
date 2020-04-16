@@ -1,18 +1,30 @@
-name: publish github pages
+name: github pages
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
+
 
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
-    
+  deploy:
+    runs-on: ubuntu-18.04
     steps:
-    - uses: actions/checkout@v1
-    - name: Publish changes to github pages
-      env:
-        DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
-        GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no"
-      run: |
-        eval "$(ssh-agent -s)" &&
-        ssh-add - <<< "${DEPLOY_KEY}" && ./script/deploy.sh
+      - uses: actions/checkout@v2
+        with:
+          submodules: true  # Fetch Hugo themes
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.DEPLOY_KEY }}
+          publish_dir: ./public
