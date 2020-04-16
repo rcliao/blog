@@ -1,0 +1,7 @@
+# vim ignore files
+*.swp
+
+# hugo generated content
+public/
+resources/
+themes/
