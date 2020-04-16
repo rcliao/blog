@@ -5,3 +5,4 @@
 [submodule "themes/pickles"]
 	path = themes/pickles
 	url = git@github.com:mismith0227/hugo_theme_pickles.git
+	branch = master
