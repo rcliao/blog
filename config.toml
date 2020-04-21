@@ -1,6 +1,6 @@
 baseurl = "/"
 languageCode = "en-us"
-Title = "Non Play Blog"
+Title = "Non Player Blog"
 theme = "pickles"
 # Copyright notice. This is displayer in the footer.
 copyright = "&copy; 2020 Eric Liao"
