@@ -1,6 +1,9 @@
 ---
 date: 2025-04-18
+tags: [living-doc]
 ---
+# Chapter 1: Writing Style Guide
+
 Last week, I executed a straightforward command:
 sync-archive --source confluence --profile=eric_writer_001
 

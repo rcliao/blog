@@ -1,5 +1,6 @@
 ---
 date: 2025-04-25
+tags: [living-doc]
 ---
 
 # Chapter 2: The Scribe Protocol

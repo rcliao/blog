@@ -1,5 +1,6 @@
 ---
 date: 2025-05-02
+tags: [living-doc]
 ---
 
 # Chapter 3: The Sycophant’s Lie

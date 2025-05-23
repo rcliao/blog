@@ -1,3 +1,7 @@
+---
+date: 2025-05-09
+tags: [living-doc]
+---
 # Chapter 4: The Training Grimoire
 
 ## Scene 1: Flashback – The Echo of Error
