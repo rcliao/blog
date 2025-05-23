@@ -2,3 +2,6 @@
 
 # private personal files
 private/
+
+# temporarily folders for passing agent feedbacks
+feedbacks/
